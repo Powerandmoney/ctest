@@ -57,6 +57,22 @@ Status ListInsert(List *L, int i, ElemType *e){//插入操作
     L->length++;
     return OK;
 }
+/*6.删除元素ListDelete(&L,i,&e)*/
+Status ListDelete(List* L, int i, ElemType* e){//删除操作
+    int k;
+
+    if (L->length==0 || i<0 || i> L->length){//线性表为空或者删除位置不正确
+        return ERROR;
+    }
+	
+    *e = L->elem[i - 1];
+	for (k = i; k < L->length; k++){
+            L->elem[k - 1] = L->elem[k];
+    }
+    
+    L->length--;
+    return OK;
+}
 
 
 int main()
