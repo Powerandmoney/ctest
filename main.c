@@ -68,6 +68,7 @@ ElemType* e=(ElemType*)malloc(sizeof(ElemType));
   List* L = (List*)malloc(sizeof(List));
     Status result = InitList(L);
 // printf(" init result = %d", result);
+
 	for(i=1;i< L->listsize;i++){
 		 L->elem[i]=i;
   }
